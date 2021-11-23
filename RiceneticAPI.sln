@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiceneticAPI", "RiceneticAPI\RiceneticAPI.csproj", "{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F771FCC2-A3FF-4B1D-8C99-CB83891704A0}
+	EndGlobalSection
+EndGlobal
