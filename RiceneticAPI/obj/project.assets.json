@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\LDProjects\\RiceneticAPI\\RiceneticAPI\\RiceneticAPI.csproj",
+      "projectUniqueName": "E:\\LDProjects\\Ricenetic-Ricenetic-Backend\\RiceneticAPI\\RiceneticAPI.csproj",
       "projectName": "RiceneticAPI",
-      "projectPath": "E:\\LDProjects\\RiceneticAPI\\RiceneticAPI\\RiceneticAPI.csproj",
+      "projectPath": "E:\\LDProjects\\Ricenetic-Ricenetic-Backend\\RiceneticAPI\\RiceneticAPI.csproj",
       "packagesPath": "C:\\Users\\Graycorp\\.nuget\\packages\\",
-      "outputPath": "E:\\LDProjects\\RiceneticAPI\\RiceneticAPI\\obj\\",
+      "outputPath": "E:\\LDProjects\\Ricenetic-Ricenetic-Backend\\RiceneticAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
