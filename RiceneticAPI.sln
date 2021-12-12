@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiceneticAPI", "RiceneticAPI\RiceneticAPI.csproj", "{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiceneticAPI", "RiceneticAPI\RiceneticAPI.csproj", "{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLRiceneticAPI", "NPNRiceModel\MLRiceneticAPI.csproj", "{8730019A-9850-4CFA-B052-AFB6E37EDA29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FECAF48-1AA2-4F5E-BC62-00A2C11759FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8730019A-9850-4CFA-B052-AFB6E37EDA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8730019A-9850-4CFA-B052-AFB6E37EDA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8730019A-9850-4CFA-B052-AFB6E37EDA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8730019A-9850-4CFA-B052-AFB6E37EDA29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

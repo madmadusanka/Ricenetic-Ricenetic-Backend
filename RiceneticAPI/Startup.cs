@@ -7,11 +7,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.ML;
+using RiceneticAPI.DataModels;
 using RiceneticAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static RiceneticAPI.NPNRiceModel;
 
 namespace RiceneticAPI
 {
@@ -27,16 +30,18 @@ namespace RiceneticAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services )
         {
+            services.AddPredictionEnginePool<NPKInput, NPKOutput>().FromFile("MLModels/NPNRiceModel.zip");
             services.AddScoped<ClientIpCheckActionFilter>(container =>
             {
                 var loggerFactory = container.GetRequiredService<ILoggerFactory>();
                 var logger = loggerFactory.CreateLogger<ClientIpCheckActionFilter>();
-
                 return new ClientIpCheckActionFilter(
                    "127.0.0.1; 192.168.1.5;", logger);
             });
-            services.AddControllers();
 
+            services.AddControllers();
+            services.AddPredictionEnginePool<NPKInput, NPKOutput>()
+                .FromFile(modelName: "NPNRiceModel", filePath: "MLModels/NPNRiceModel.zip", watchForChanges: true);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
