@@ -52,7 +52,7 @@ namespace NPNRiceModel
                 //var bodys = http.Request.Form. as Stream;
              
                 //http.Request.Form.TryGetValue("ImageSource", out imagePath);
-                var file = http.Request.Form.Files.GetFile("ImageSource");
+                //var file = http.Request.Form.Files.GetFile("ImageSource");
                 //var input = await JsonSerializer.DeserializeAsync<NPNRiceModel.ModelInput>(body);
 
 
@@ -68,22 +68,23 @@ namespace NPNRiceModel
                 //}
                 var body = http.Request.Body as Stream;
                 var requestBody = await JsonSerializer.DeserializeAsync<InputModel>(body);
-                byte[] bytes = Convert.FromBase64String(requestBody.base64);
+                //byte[] bytes = Convert.FromBase64String(requestBody.base64);
 
-                Image image;
-                using (MemoryStream ms = new MemoryStream(bytes))
-                {
-                    image = Image.FromStream(ms);
-                }
+                
+                //using (MemoryStream ms = new MemoryStream(bytes))
+                //{
+                //    image = Image.FromStream(ms);
+                //}
                 string fileName = "image";
-                string saveDirectory = @"C:\";
+                string saveDirectory = @"C:\newFolder";
                 if (!Directory.Exists(fileName))
                 {
                     Directory.CreateDirectory(fileName);
                 }
                 string fileSavePath = Path.Combine(saveDirectory, fileName);
-                Image copy = image;
-                copy.Save(fileSavePath, ImageFormat.Jpeg);
+                LoadImage(requestBody.base64);
+                //Image copy = image;
+                //copy.Save(fileSavePath, ImageFormat.Bmp});
 
                 var input = new NPNRiceModel.ModelInput
                 {
@@ -93,15 +94,40 @@ namespace NPNRiceModel
                 NPNRiceModel.ModelOutput prediction = predictionEnginePool.Predict(input);
 
                 // Return prediction as response
-                await http.Response.WriteAsJsonAsync(prediction.Prediction);
+                await http.Response.WriteAsJsonAsync(prediction);
             }
             catch (Exception ex)
             {
 
             }
+            void LoadImage(string base64)
+            {
+                string fileName = "image";
+                string saveDirectory = @"C:\newFolder";
+                if (!Directory.Exists(fileName))
+                {
+                    Directory.CreateDirectory(fileName);
+                }
+                string fileSavePath = Path.Combine(saveDirectory, fileName);
+                //data:image/gif;base64,
+                //this image is a single pixel (black)
+                byte[] bytes = Convert.FromBase64String(base64);
+
+                Image image;
+                using (MemoryStream ms = new MemoryStream(bytes))
+                {
+                    image = Image.FromStream(ms);
+                    Image copy = image;
+                    copy.Save(fileSavePath, ImageFormat.Jpeg);
+                }
+
+            }
             // Get PredictionEnginePool service
-            
+
         }
+
+       
     }
+
 }
 
